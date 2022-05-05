@@ -36,11 +36,11 @@ def scrape(url):
     return e.extract(r.text)
 
 # product_data = []
-with open("urls.txt",'r') as urllist, open('output.jsonl','w') as outfile:
+with open("urls.txt",'r') as urllist, open('output.jsonl','w', encoding='utf-8') as outfile:   #改动位置：编码为utf-8
     for url in urllist.read().splitlines():
         data = scrape(url) 
         if data:
-            json.dump(data,outfile)
+            json.dump(data,outfile, ensure_ascii=False) #改动位置：不转译为ascii
             outfile.write("\n")
             # sleep(5)
     
