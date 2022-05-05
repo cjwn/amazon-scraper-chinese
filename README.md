@@ -1,4 +1,4 @@
-# Amazon Scraper using Selectorlib 
+# Amazon Scraper using Selectorlib （用Selectorlib爬取亚马逊内容）
 
 A simple amazon scraper to extract product details and prices from Amazon.com using Python Requests and Selectorlib. 
 
@@ -18,13 +18,13 @@ From a terminal
 1. Activate the Virtual Environment `source .venv/bin/activate` (Optional) 
 1. Install Requirements `pip3 install -r requirements.txt`
 
-## Scrape Product Details from Product Page
+## Scrape Product Details from Product Page 从商品页爬取商品详情
 
 1. Add Amazon Product URLS to [urls.txt](urls.txt)
 1. Run `python3 amazon.py`
 1. Get data from [output.jsonl](output.jsonl)
 
-## Scrape Products from Search Results
+## Scrape Products from Search Results 从搜索结果抓取商品信息
 
 This scraper only scrapes product from the first page of search results
 
@@ -32,7 +32,7 @@ This scraper only scrapes product from the first page of search results
 1. Run `python3 searchresults.py`
 1. Get data from [search_results_output.jsonl](search_results_output.jsonl)
 
-## Example Data Format
+## Example Data Format 样例文件
 
 ### Product Details
 ```json
@@ -81,3 +81,6 @@ Each result would look similar
     "search_url": "https://www.amazon.com/s?k=laptops"
 }
 ```
+
+### 我补充的一点小变化
+这个两年前的教程已经无法爬取价格，另外针对中文没有转码。在python中默认为unicode，需要转码为utf-8才能正常显示中文，因此只在open函数中增加encoding='utf-8'，并在json写入文件时不自动转为ascii就行
