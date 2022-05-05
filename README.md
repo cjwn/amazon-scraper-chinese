@@ -83,4 +83,5 @@ Each result would look similar
 ```
 
 ### 我补充的一点小变化
-这个两年前的教程已经无法爬取价格，另外针对中文没有转码。在python中默认为unicode，需要转码为utf-8才能正常显示中文，因此只在open函数中增加encoding='utf-8'，并在json写入文件时不自动转为ascii就行
+这个两年前的教程已经无法爬取价格，另外针对中文没有转码。在python中默认为unicode，需要转码为utf-8才能正常显示中文，因此只在open函数中增加encoding='utf-8'，并在json写入文件时不自动转为ascii就行。
+另外，把价格的爬取标签改为了：span.a-offscreen
